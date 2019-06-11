@@ -1,15 +1,16 @@
 $(document).ready(function(){
-  $("#formOne").submit(function(event) {
-    var items = [];
-    var list = ["list1", "list2", "list3", "list4", "list5"]
-    var sorted = items.push()
-    items.forEach(function(input){
-      var userInput = $("#" + input).val();
+  $("#grocery").submit(function(event) {
 
-      console.log(sorted);
+    var items = ["list1", "list2", "list3"];
 
-      event.preventDefault();
+  items.forEach(function(item){
+    // var sorted = items.sort();
+    var userInput = $("#" + item).val();
+    $("." + item).text(userInput.toUpperCase());
     });
 
+    $(".output").show();
+    event.preventDefault();
   });
+
 });
